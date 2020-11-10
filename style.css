@@ -51,6 +51,11 @@ button{
     color: white;
     font-size: 1.8rem;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #27394e;
 }
 
 /* GLOBAL STYLES */
@@ -89,7 +94,7 @@ nav ul {
 
 .hero {
     min-height: 90vh;
-    background: -moz-linear-gradient(rgba(0, 0, 0, 0.5), transparent),url('/img/landing-page.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url('/img/landing-page.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -108,6 +113,67 @@ nav ul {
 /* NAV + HERO SECTION */
 
 
+/* LOCATIONS SECTION*/
+
+#locations{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url('/img/new-york-page.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.locations-head {
+    width: 90%;
+    margin: auto;
+}
+
+.locations-head h2 {
+    padding: 1rem 0rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5rem;
+}
+
+.locations-head h3 {
+    padding: 4rem 0rem;
+    background: linear-gradient(#131c27, #663b34);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cloud {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.moving-cloud-1 {
+    animation: cloudAnimation 8s infinite alternate ease-in-out;
+}
+
+
+.moving-cloud-2 {
+    top: 15%;
+    z-index: -1;
+    opacity: 0.5;
+    animation: cloudAnimation 8.5s infinite alternate ease-in-out;
+}
+
+@keyframes cloudAnimation {
+    0%{
+        transform: translate(10%, -10%);
+    }
+    100%{
+        transform: translate(0%,0%);
+    }
+}
+
+/* LOCATIONS SECTION*/
+
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 932px) {
@@ -122,6 +188,24 @@ nav ul {
 
     #logo {
         padding: 2rem;
+    }
+
+    .cloud {
+        height: 40rem;
+        pointer-events: none;
+    }
+
+    .moving-cloud-1 {
+        z-index: -1;
+    }
+
+    .moving-cloud-2 {
+        z-index: -2;
+    }
+
+    .locations-head h3 {
+        background: rgba(19, 28, 39, 0.9);
+        -webkit-text-fill-color: white;
     }
 }
 
